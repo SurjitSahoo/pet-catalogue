@@ -1,4 +1,43 @@
-# Getting Started with Create React App
+# Dummy Pet-Store App for EDB Assignment
+
+[Checkout the app](https://surjitsahoo.github.io/pet-catalogue/) deployed in GitHub-Pages
+
+## To run the app in local system
+
+- Clone the repository
+
+  ```sh
+  git clone https://github.com/SurjitSahoo/pet-catalogue.git
+  ```
+
+- install dependencies
+
+  ```sh
+  npm install
+  ```
+
+- start the app
+
+  ```sh
+  npm start
+  ```
+
+- start json-server
+
+  ```sh
+  npm run json-server
+  ```
+
+## Specs
+
+- Eslint, prettier and husky configurations for static code analysis, code-formatting and avoiding unintended bad-code push to the repository
+- [React-Query](https://react-query.tanstack.com/) for managing and caching server side state
+- [Tailwind css](https://tailwindcss.com/) for styling the app.
+
+## To take it futher
+
+- Add new Pages by creating new pages in `src/pages` directory and then registering new routes in `src/routes/index.ts` file.
+- Add new components in `src/components` directory
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
