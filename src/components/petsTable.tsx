@@ -1,6 +1,7 @@
 import apis, { QUERY_CONST } from 'apis';
 import { useMemo } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
+import { Link } from 'react-router-dom';
 import { CellProps, Column } from 'react-table';
 import { IPet } from 'types/pets';
 import Table from './table';
@@ -17,6 +18,14 @@ function Tags({ cell: { value } }: React.PropsWithChildren<CellProps<IPet, strin
         </span>
       ))}
     </div>
+  );
+}
+
+function Name({ cell: { value }, row: { original } }: React.PropsWithChildren<CellProps<IPet, string | undefined>>) {
+  return (
+    <Link to={`pet/${original.id}`} className='w-full inline-block'>
+      {value}
+    </Link>
   );
 }
 
@@ -37,6 +46,7 @@ export default function PetsTable({ pets }: Props) {
         Header: 'Name',
         accessor: 'name',
         maxWidth: 100,
+        Cell: Name,
       },
       {
         Header: 'Tags',

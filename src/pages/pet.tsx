@@ -18,7 +18,7 @@ export default function Pet() {
   });
 
   return image.data && pet.data ? (
-    <div className='flex mt-4 justify-center'>
+    <div className='flex mt-12 justify-center'>
       <img src={image.data.message} alt='pet' className='shadow-md rounded-md mr-6 max-h-[70vh] max-w-[40vw]' />
       <div className='flex flex-col justify-center'>
         <h1 className='text-4xl font-semibold'>{pet.data.name}</h1>
