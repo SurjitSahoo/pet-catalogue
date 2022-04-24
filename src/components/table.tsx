@@ -3,12 +3,14 @@ import { Column, useGlobalFilter, usePagination, useSortBy, useTable, Row, useFl
 import { AiFillDelete, AiFillCaretUp, AiFillCaretDown } from 'react-icons/ai';
 import { a11yOnClick } from 'utils';
 import { useCallback } from 'react';
+import { IPet } from 'types/pets';
+import { useNavigate } from 'react-router';
 import TablePagination from './tablePagination';
 
 interface Props {
-  columns: Column<any>[];
-  data: any[];
-  onDelete: (row: any) => void | null;
+  columns: Column<IPet>[];
+  data: IPet[];
+  onDelete: (row: IPet) => void | null;
   deleteTitle?: string;
 }
 export default function Table({ columns, data, onDelete, deleteTitle = 'Delete' }: Props) {
@@ -57,6 +59,8 @@ export default function Table({ columns, data, onDelete, deleteTitle = 'Delete' 
     ]);
   });
 
+  const navigate = useNavigate();
+
   return (
     <>
       <table {...getTableProps()} className='w-full table-fixed rounded-lg border-collapse overflow-hidden'>
@@ -90,9 +94,14 @@ export default function Table({ columns, data, onDelete, deleteTitle = 'Delete' 
           {page.map(row => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()} className='even:bg-gray-100 hover:bg-gray-200 transition-all duration-200'>
+              <tr
+                {...row.getRowProps()}
+                onClick={() => navigate(`/pet/${row.original.id}`)}
+                className='group even:bg-gray-100 hover:bg-gray-200 transition-all duration-200'>
                 {row.cells.map(cell => (
-                  <td {...cell.getCellProps()} className='px-4'>
+                  <td
+                    {...cell.getCellProps()}
+                    className='px-4 group-hover:first:underline group-hover:first:cursor-pointer'>
                     {cell.render('Cell')}
                   </td>
                 ))}

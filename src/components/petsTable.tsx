@@ -1,10 +1,24 @@
-/* eslint-disable react/no-unstable-nested-components */
 import apis, { QUERY_CONST } from 'apis';
 import { useMemo } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
-import { Column } from 'react-table';
+import { CellProps, Column } from 'react-table';
 import { IPet } from 'types/pets';
 import Table from './table';
+
+function Tags({ cell: { value } }: React.PropsWithChildren<CellProps<IPet, string | undefined>>) {
+  const values = value?.split(',');
+  if (!values) return '';
+  return (
+    <div>
+      {values.map((val, idx) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <span className='bg-gray-50 mx-1 px-2 rounded-sm' key={val + idx}>
+          {val}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 interface Props {
   pets: IPet[];
@@ -27,20 +41,7 @@ export default function PetsTable({ pets }: Props) {
       {
         Header: 'Tags',
         accessor: 'tags',
-        Cell: ({ cell: { value } }) => {
-          const values = value?.split(',');
-          if (!values) return '';
-          return (
-            <div>
-              {values.map((val, idx) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <span className='bg-gray-50 mx-1 px-2 rounded-sm' key={val + idx}>
-                  {val}
-                </span>
-              ))}
-            </div>
-          );
-        },
+        Cell: Tags,
       },
     ],
     [],

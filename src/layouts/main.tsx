@@ -3,7 +3,7 @@ import Routes from 'routes';
 
 export default function MainLayout() {
   return (
-    <div>
+    <div className='min-h-screen'>
       <Header />
       <Routes />
     </div>
