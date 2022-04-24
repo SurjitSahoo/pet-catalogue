@@ -27,12 +27,18 @@ export function a11yOnClick({ role, fn, onKeyPress }: OnClickProps): HTMLAttribu
   return { role, tabIndex: 0, onKeyDown, onClick: fn } as const;
 }
 
-export function betterFetch(url: string, options: RequestInit = {}) {
-  return fetch(url, {
-    ...options,
-    headers: {
-      ...options.headers,
-      'X-Requested-With': 'XMLHttpRequest',
-    },
+export default function betterFetch(input: RequestInfo, init?: RequestInit): Promise<any> {
+  return new Promise((resolve, reject) => {
+    fetch(input, init)
+      .then(res => {
+        if (res.ok) {
+          resolve(res.json());
+        } else {
+          reject(res);
+        }
+      })
+      .catch(err => {
+        reject(err);
+      });
   });
 }

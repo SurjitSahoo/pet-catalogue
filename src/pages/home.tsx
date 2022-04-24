@@ -1,7 +1,16 @@
+import apis, { QUERY_CONST } from 'apis';
+import CreatePet from 'components/createPetForm';
+import PetsTable from 'components/petsTable';
+import { useQuery } from 'react-query';
+
 export default function Home() {
-  return (
-    <div>
-      <h1 className='text-green-700 text-center'>Home</h1>
+  const { isLoading, data: pets } = useQuery(QUERY_CONST.PETS, apis.getPets);
+
+  if (isLoading) return <span>Loading...</span>;
+  return pets ? (
+    <div className='mx-auto'>
+      <CreatePet />
+      <PetsTable {...{ pets }} />
     </div>
-  );
+  ) : null;
 }
