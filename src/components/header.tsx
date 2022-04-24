@@ -4,7 +4,7 @@ import logo from 'assets/images/pet-house.png';
 export default function Header() {
   return (
     <header className='bg-gray-900 flex justify-center'>
-      <div className='text-white flex items-center justify-between w-max min-w-[75rem]'>
+      <div className='text-white flex items-center justify-between w-full 2xl:max-w-7xl xl:max-w-6xl md:max-w-4xl min-w-[24rem]'>
         <Link to='/'>
           <div className='flex items-center px-4 py-2'>
             <img src={logo} alt='logo' className='w-14 mr-2' />

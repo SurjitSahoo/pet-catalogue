@@ -45,17 +45,17 @@ export default function CreatePet() {
 
   return (
     <div className='my-4 pb-4 border-b w-8/12 mx-auto'>
-      <form className='flex items-center justify-between ' onSubmit={onSubmit}>
+      <form className='flex items-center justify-between flex-col sm:flex-col lg:flex-row' onSubmit={onSubmit}>
         <input
           type='text'
-          className='bg-gray-100 w-[30%] rounded-md border-transparent'
+          className='bg-gray-100 lg:w-[30%] w-full mb-4 lg:mb-0 rounded-md border-transparent'
           placeholder='Pet Name'
           value={name.value}
           onChange={onNameChange}
         />
         <input
           type='text'
-          className='bg-gray-100 w-[30%] rounded-md border-transparent'
+          className='bg-gray-100 lg:w-[30%] w-full mb-4 lg:mb-0 rounded-md border-transparent'
           placeholder='Tags (Comma Separated)'
           value={tags.value}
           onChange={onTagChange}
@@ -64,7 +64,7 @@ export default function CreatePet() {
           type='submit'
           onClick={onSubmit}
           disabled={isLoading}
-          className='bg-green-700 disabled:bg-green-400 disabled:cursor-progress disabled:shadow-none text-white uppercase font-semibold px-8 py-2 rounded-md hover:shadow-md transition-all duration-200'>
+          className='bg-green-700 w-full max-w-sm lg:max-w-fit disabled:bg-green-400 disabled:cursor-progress disabled:shadow-none text-white uppercase font-semibold px-8 py-2 rounded-md hover:shadow-md transition-all duration-200'>
           {isLoading ? (
             <div className='min-w-[4rem] flex justify-center items-center'>
               <div className='animate-spin rounded-full h-6 w-6 border-b-2 border-white' />
