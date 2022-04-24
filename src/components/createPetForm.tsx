@@ -48,14 +48,14 @@ export default function CreatePet() {
       <form className='flex items-center justify-between ' onSubmit={onSubmit}>
         <input
           type='text'
-          className='bg-gray-100 rounded-md border-transparent'
+          className='bg-gray-100 w-[30%] rounded-md border-transparent'
           placeholder='Pet Name'
           value={name.value}
           onChange={onNameChange}
         />
         <input
           type='text'
-          className='bg-gray-100 rounded-md border-transparent'
+          className='bg-gray-100 w-[30%] rounded-md border-transparent'
           placeholder='Tags (Comma Separated)'
           value={tags.value}
           onChange={onTagChange}

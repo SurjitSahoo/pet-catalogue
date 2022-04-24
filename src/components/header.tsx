@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from 'assets/images/pet-house.png';
 
 export default function Header() {
   return (
@@ -6,7 +7,7 @@ export default function Header() {
       <div className='text-white flex items-center justify-between w-max min-w-[75rem]'>
         <Link to='/'>
           <div className='flex items-center px-4 py-2'>
-            <img src='/pet-store-512x512.png' alt='logo' className='w-14 mr-2' />
+            <img src={logo} alt='logo' className='w-14 mr-2' />
             <span className='text-5xl font-serif'>Pet Store</span>
           </div>
         </Link>
