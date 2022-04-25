@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pet-catalogue/static/css/main.b1018274.css",
-    "main.js": "/pet-catalogue/static/js/main.2e512d99.js",
+    "main.css": "/pet-catalogue/static/css/main.1c761fae.css",
+    "main.js": "/pet-catalogue/static/js/main.ebdd7112.js",
     "static/js/787.d8f8ab33.chunk.js": "/pet-catalogue/static/js/787.d8f8ab33.chunk.js",
     "static/media/pet-house.png": "/pet-catalogue/static/media/pet-house.ef7f7c3641a3b4c63f86.png",
     "index.html": "/pet-catalogue/index.html",
-    "main.b1018274.css.map": "/pet-catalogue/static/css/main.b1018274.css.map",
-    "main.2e512d99.js.map": "/pet-catalogue/static/js/main.2e512d99.js.map",
+    "main.1c761fae.css.map": "/pet-catalogue/static/css/main.1c761fae.css.map",
+    "main.ebdd7112.js.map": "/pet-catalogue/static/js/main.ebdd7112.js.map",
     "787.d8f8ab33.chunk.js.map": "/pet-catalogue/static/js/787.d8f8ab33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1018274.css",
-    "static/js/main.2e512d99.js"
+    "static/css/main.1c761fae.css",
+    "static/js/main.ebdd7112.js"
   ]
 }
