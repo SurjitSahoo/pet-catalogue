@@ -69,7 +69,7 @@ export default function PetsTable({ pets }: Props) {
   }
 
   return (
-    <div className='w-8/12 mx-auto'>
+    <div className='lg:w-8/12 mx-2 lg:mx-auto'>
       <Table {...{ columns, data: pets, onDelete }} />
     </div>
   );

@@ -23,7 +23,7 @@ export default function TablePagination({
   setPageSize,
 }: Props) {
   return (
-    <div className='flex justify-end items-center my-3'>
+    <div className='flex justify-end items-center flex-col sm:flex-row my-3'>
       <button
         className='px-3 py-1 rounded-md hover:font-bold hover:shadow-sm hover:bg-gray-200 transition-all duration-200'
         type='button'

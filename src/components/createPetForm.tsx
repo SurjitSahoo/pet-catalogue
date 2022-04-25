@@ -12,6 +12,7 @@ type FormInput = {
 export default function CreatePet() {
   const [name, setName] = useState<FormInput>({ value: '', isTouched: false, isValid: true });
   const [tags, setTags] = useState<FormInput>({ value: '', isTouched: false, isValid: true });
+  const [formError, setFormError] = useState('');
 
   const queryClient = useQueryClient();
   const {
@@ -36,11 +37,15 @@ export default function CreatePet() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement> | MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    createPet({
-      id: uuid4(),
-      name: name.value,
-      tags: tags.value,
-    });
+    if (name.isTouched && name.isValid) {
+      createPet({
+        id: uuid4(),
+        name: name.value,
+        tags: tags.value,
+      });
+    } else {
+      setFormError('Name is required');
+    }
   };
 
   return (
@@ -75,6 +80,7 @@ export default function CreatePet() {
         </button>
       </form>
       {isError && <div className='text-red-500 mt-2 text-sm'>Something went wrong while saving your pet! 😟</div>}
+      {formError && <div className='text-red-500 mt-2 text-sm'>{formError}</div>}
     </div>
   );
 }

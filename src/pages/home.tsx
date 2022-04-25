@@ -18,7 +18,7 @@ export default function Home() {
   if (isError) return <Error />;
 
   return pets ? (
-    <div className='mx-auto max-w-[110rem]'>
+    <div className='mx-auto w-full lg:max-w-[110rem]'>
       <CreatePet />
       <PetsTable {...{ pets }} />
     </div>
